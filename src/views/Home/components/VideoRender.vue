@@ -7,7 +7,7 @@
     >
       <div class="col-start-1 row-start-1 h-full flex items-center justify-center">
         <v-progress-circular
-          color="indigo"
+          color="primary"
           v-model="renderProgress"
           :indeterminate="taskInProgress && appStore.renderStatus !== RenderStatus.Rendering"
           :size="96"
@@ -32,7 +32,7 @@
           v-if="!taskInProgress"
           class="!h-24 !px-8 w-full"
           size="x-large"
-          color="deep-purple-accent-3"
+          color="primary"
           @click="emit('renderVideo')"
         >
           <div class="inline-flex items-center gap-4">
@@ -56,7 +56,7 @@
         <v-chip
           class="batch-chip"
           :class="{ 'batch-chip--locked': taskInProgress }"
-          :color="appStore.autoBatch ? 'indigo' : 'grey'"
+          :color="appStore.autoBatch ? 'primary' : 'grey'"
           variant="tonal"
           @click="handleToggleAutoBatch"
         >

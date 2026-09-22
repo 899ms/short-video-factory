@@ -1,6 +1,13 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { EdgeTTSVoice } from '~/electron/lib/edge-tts'
+import {
+  defaultCopywritingConfig,
+  defaultLlmConfig,
+  normalizeCopywritingConfig,
+  normalizeLlmConfig,
+} from '@/lib/llm/config'
+import type { CopywritingStatus, LlmConfig } from '@/lib/llm/types'
 
 export enum RenderStatus {
   None,
@@ -23,13 +30,17 @@ export const useAppStore = defineStore(
 
     // 大模型文案生成
     const prompt = ref('')
-    const llmConfig = ref({
-      modelName: '',
-      apiUrl: '',
-      apiKey: '',
-    })
-    const updateLLMConfig = (newConfig: typeof llmConfig.value) => {
-      llmConfig.value = newConfig
+    const llmConfig = ref<LlmConfig>(defaultLlmConfig())
+    const copywritingConfig = ref(defaultCopywritingConfig())
+    const copywritingStatus = ref<CopywritingStatus>('idle')
+    const updateLLMConfig = (newConfig: LlmConfig) => {
+      llmConfig.value = normalizeLlmConfig(newConfig)
+    }
+    const updateCopywritingConfig = (newConfig: typeof copywritingConfig.value) => {
+      copywritingConfig.value = normalizeCopywritingConfig(newConfig)
+    }
+    const updateCopywritingStatus = (newStatus: CopywritingStatus) => {
+      copywritingStatus.value = newStatus
     }
 
     // 视频素材管理
@@ -91,6 +102,10 @@ export const useAppStore = defineStore(
       prompt,
       llmConfig,
       updateLLMConfig,
+      copywritingConfig,
+      updateCopywritingConfig,
+      copywritingStatus,
+      updateCopywritingStatus,
 
       videoAssetsFolder,
       videoExportFolder,
@@ -118,7 +133,11 @@ export const useAppStore = defineStore(
   },
   {
     persist: {
-      omit: ['genderList', 'speedList', 'autoBatch', 'renderStatus'],
+      omit: ['genderList', 'speedList', 'autoBatch', 'renderStatus', 'copywritingStatus'],
+      afterHydrate: (context) => {
+        context.store.updateLLMConfig(context.store.llmConfig)
+        context.store.updateCopywritingConfig(context.store.copywritingConfig)
+      },
     },
   },
 )

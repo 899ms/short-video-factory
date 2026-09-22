@@ -49,7 +49,9 @@
       "test": "测试",
       "close": "关闭",
       "refreshAssets": "刷新素材库",
-      "copyErrorDetail": "复制报错详细信息"
+      "copyErrorDetail": "复制报错详细信息",
+      "add": "添加",
+      "remove": "移除"
     },
     "states": {
       "noData": "无数据"
@@ -118,15 +120,60 @@
         "modelName": "模型名称",
         "apiUrl": "API 地址",
         "apiKey": "API Key",
-        "compatibleNote": "兼容任意 OpenAI 标准接口"
+        "compatibleNote": "兼容任意 OpenAI 标准接口",
+        "protocol": "接口类型",
+        "connectionTab": "模型连接",
+        "copywritingTab": "文案规则",
+        "advancedTab": "高级设置",
+        "protocolCompatible": "通用 OpenAI 兼容接口",
+        "protocolChat": "OpenAI Chat Completions",
+        "protocolResponses": "OpenAI Responses",
+        "protocolAnthropic": "Anthropic Messages/兼容接口",
+        "requestUrl": "最终请求地址",
+        "anthropicAuthMode": "认证方式",
+        "copywritingRules": "文案规则",
+        "systemPromptMode": "系统提示词",
+        "builtin": "内置（推荐）",
+        "custom": "自定义",
+        "off": "关闭",
+        "builtinDescription": "使用内置口播规则，生成可直接用于语音合成的正文。",
+        "customDescription": "使用你填写的完整提示词替换内置规则。",
+        "offDescription": "不附加系统提示词，仅发送创作需求。",
+        "customPrompt": "自定义提示词",
+        "customPromptHint": "自定义内容将完整替换内置提示词。",
+        "fillBuiltin": "填入内置内容",
+        "advanced": "高级连接设置",
+        "instructionDelivery": "系统指令发送方式",
+        "standardDelivery": "标准方式（推荐）",
+        "userMessageDelivery": "合并到用户消息",
+        "timeoutSeconds": "请求超时（秒）",
+        "maxOutputTokens": "最大输出 Token",
+        "replacePromptConfirm": "这会覆盖当前自定义提示词，是否继续？",
+        "customHeaders": "自定义请求头",
+        "headerName": "名称",
+        "headerValue": "值"
       },
       "errors": {
         "promptRequired": "提示词不能为空",
         "connectionFailed": "大模型连接失败，请检查配置是否正确",
-        "generateFailed": "生成失败，请检查大模型配置是否正确"
+        "generateFailed": "生成失败，请检查大模型配置是否正确",
+        "customPromptRequired": "请填写自定义提示词，或选择关闭",
+        "cancelled": "文案生成已取消",
+        "failed": "未收到有效文案",
+        "truncated": "文案生成不完整",
+        "textNotReady": "当前文案未完成，无法用于语音合成"
       },
       "success": {
         "connectionSucceeded": "大模型连接成功"
+      },
+      "status": {
+        "idle": "待生成",
+        "generating": "生成中",
+        "completed": "已完成",
+        "cancelled": "已取消",
+        "failed": "失败",
+        "truncated": "不完整",
+        "edited": "已编辑"
       }
     },
     "tts": {

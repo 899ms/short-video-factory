@@ -49,7 +49,9 @@
       "test": "Test",
       "close": "Close",
       "refreshAssets": "Refresh Assets",
-      "copyErrorDetail": "Copy error details"
+      "copyErrorDetail": "Copy error details",
+      "add": "Add",
+      "remove": "Remove"
     },
     "states": {
       "noData": "No data"
@@ -118,15 +120,60 @@
         "modelName": "Model Name",
         "apiUrl": "API URL",
         "apiKey": "API Key",
-        "compatibleNote": "Compatible with any OpenAI-compatible API"
+        "compatibleNote": "Compatible with any OpenAI-compatible API",
+        "protocol": "Protocol",
+        "connectionTab": "Connection",
+        "copywritingTab": "Copywriting",
+        "advancedTab": "Advanced",
+        "protocolCompatible": "OpenAI-compatible API",
+        "protocolChat": "OpenAI Chat Completions",
+        "protocolResponses": "OpenAI Responses",
+        "protocolAnthropic": "Anthropic Messages/compatible API",
+        "requestUrl": "Final request URL",
+        "anthropicAuthMode": "Authentication",
+        "copywritingRules": "Copywriting rules",
+        "systemPromptMode": "System prompt",
+        "builtin": "Built-in (recommended)",
+        "custom": "Custom",
+        "off": "Off",
+        "builtinDescription": "Use built-in voiceover rules to generate text ready for speech synthesis.",
+        "customDescription": "Use your complete custom prompt instead of the built-in rules.",
+        "offDescription": "Do not add a system prompt; send only the creative request.",
+        "customPrompt": "Custom prompt",
+        "customPromptHint": "The custom content completely replaces the built-in prompt.",
+        "fillBuiltin": "Use built-in content",
+        "advanced": "Advanced connection settings",
+        "instructionDelivery": "Instruction delivery",
+        "standardDelivery": "Standard (recommended)",
+        "userMessageDelivery": "Merge into user message",
+        "timeoutSeconds": "Request timeout (seconds)",
+        "maxOutputTokens": "Maximum output tokens",
+        "replacePromptConfirm": "This will replace the current custom prompt. Continue?",
+        "customHeaders": "Custom headers",
+        "headerName": "Name",
+        "headerValue": "Value"
       },
       "errors": {
         "promptRequired": "Prompt cannot be empty",
         "connectionFailed": "LLM connection failed, please check your configuration",
-        "generateFailed": "Generation failed, please check LLM configuration"
+        "generateFailed": "Generation failed, please check LLM configuration",
+        "customPromptRequired": "Enter a custom prompt or choose Off",
+        "cancelled": "Generation was cancelled",
+        "failed": "No valid text was received",
+        "truncated": "Generation is incomplete",
+        "textNotReady": "The current script is not ready for speech synthesis"
       },
       "success": {
         "connectionSucceeded": "LLM connected successfully"
+      },
+      "status": {
+        "idle": "Ready",
+        "generating": "Generating",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "failed": "Failed",
+        "truncated": "Incomplete",
+        "edited": "Edited"
       }
     },
     "tts": {

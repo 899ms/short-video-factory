@@ -226,9 +226,8 @@ const handleRenderVideo = async () => {
 
     // 获取文案
     appStore.updateRenderStatus(RenderStatus.GenerateText)
-    const text =
-      TextGenerateInstance.value?.getCurrentOutputText() ||
-      (await TextGenerateInstance.value?.handleGenerate())!
+    const text = await TextGenerateInstance.value?.getTextForSynthesis()
+    if (!text) return
 
     // TTS合成语音
     // @ts-ignore

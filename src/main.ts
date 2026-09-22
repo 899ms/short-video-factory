@@ -67,6 +67,15 @@ setupRendererConsoleLogging()
 const vuetify = createVuetify({
   components,
   directives,
+  theme: {
+    themes: {
+      light: {
+        colors: {
+          primary: '#651FFF',
+        },
+      },
+    },
+  },
   icons: {
     defaultSet: 'mdi',
     aliases,

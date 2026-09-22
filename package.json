@@ -34,7 +34,9 @@
     "ws": "^8.18.3"
   },
   "devDependencies": {
-    "@ai-sdk/openai": "^3.0.26",
+    "@ai-sdk/anthropic": "4.0.58",
+    "@ai-sdk/openai": "^4.0.71",
+    "@ai-sdk/openai-compatible": "3.0.53",
     "@mdi/font": "^7.4.47",
     "@types/archiver": "^6.0.3",
     "@types/better-sqlite3": "^7.6.13",
@@ -44,7 +46,7 @@
     "@types/ws": "^8.18.1",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/core": "^13.5.0",
-    "ai": "^6.0.77",
+    "ai": "^7.0.107",
     "cross-env": "^7.0.3",
     "electron": "^22.3.27",
     "electron-builder": "^24.13.3",
